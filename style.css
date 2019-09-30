@@ -1,0 +1,100 @@
+html {
+  font-family: arial;
+}
+canvas {
+  border: 0.3vh solid black;
+  margin: 10vh auto;
+  display: block;
+}
+header {
+  border: 0.5vh solid black;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 99vw;
+  height: 10vh;
+}
+header h1 {
+  margin-left: 3vw;
+}
+#menu {
+  height: 40vh;
+  width: 30vw;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border: 3vh solid black;
+  background-color: rgb(220, 220, 220);
+}
+#menu h2 {
+  text-align: center;
+  border-bottom: 0.5vh solid black;
+}
+#name_asker {
+  height: 12vh;
+  width: 60vw;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border: 1vh solid black;
+  background-color: rgb(220, 220, 220);
+}
+#name_asker h3 {
+  text-align: center;
+  border-bottom: 0.5vh solid black;
+  margin-bottom: 0.2vh;
+}
+#name {
+  width: 56vw;
+  margin-left: 1.5vw;
+  height: 3.8vh;
+  border: 0.2vh solid black;
+  font-size: 3.2vh;
+  font-weight: 200;
+  text-align: center;
+}
+#highscores {
+  height: 60vh;
+  width: 40vw;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border: 1vh solid black;
+  background-color: rgb(220, 220, 220);
+}
+#highscores h2 {
+  text-align: center;
+}
+#back {
+  position: absolute;
+  top: 85%;
+  width: 100%;
+}
+.highscore p {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 1.7vh;
+}
+.nick {
+  margin-left: 5vw;
+  width: 25vw;
+}
+.button {
+  text-align: center;
+  height: 5vh;
+  box-sizing: border-box;
+  font-weight: 900;
+  cursor: pointer;
+  margin-top: 3vh;
+}
+.button:hover {
+  border-bottom: 0.3vh solid black;
+}

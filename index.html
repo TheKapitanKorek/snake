@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <h1>Snake</h1>
+    </header>
+    <div id="menu">
+      <h2>Main Menu</h2>
+      <div id="buttons">
+        <div class="button play1">
+          One Player
+        </div>
+        <div class="button play2">
+          Two Players
+        </div>
+        <div class="button highscores">
+          High Scores
+        </div>
+      </div>
+    </div>
+    <div id="name_asker">
+      <h3>Insert your name and press Enter to add high score record</h3>
+      <input id="name" type="text" />
+    </div>
+    <div id="highscores">
+      <h2>Highscores</h2>
+      <div id="scores">
+        <div class="highscore">
+          <p class="nick">Tomek</p>
+          <p>100</p>
+        </div>
+      </div>
+      <div class="button" id="back">Back</div>
+    </div>
+    <canvas></canvas>
+    <script src="index.js"></script>
+  </body>
+</html>
