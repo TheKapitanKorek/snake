@@ -6,10 +6,15 @@ const nameAsker = document.getElementById('name_asker');
 const nameBox = document.getElementById('name');
 const singleplayer = document.querySelector('.play1');
 const multiplayer = document.querySelector('.play2');
+const highscoresBTN = document.querySelector('.highscores');
+const controlsBTN = document.querySelector('.controls');
 const highscores = document.getElementById('highscores');
+const controls = document.getElementById('controls');
 let gameOn;
 highscores.style.display = 'none';
 nameAsker.style.display = 'none';
+controls.style.display = 'none';
+//adding menu event listeners
 singleplayer.addEventListener('click', () => {
   menu.style.display = 'none';
   gameOn = true;
@@ -22,23 +27,7 @@ multiplayer.addEventListener('click', () => {
   createGame(2);
   animate(2);
 });
-//highscore manipulation and display functions/event-listeners
-highscores.addEventListener('click', () => {});
-let highscore;
-document.addEventListener('keypress', event => {
-  if (event.key === 'Enter' && nameBox.value) {
-    console.log(highscore);
-    addHighscore(nameBox.value, highscore);
-    nameBox.value = '';
-    nameAsker.style.display = 'none';
-    menu.style.display = 'block';
-  }
-});
-document.getElementById('back').addEventListener('click', () => {
-  highscores.style.display = 'none';
-  menu.style.display = 'block';
-});
-document.querySelector('.highscores').addEventListener('click', () => {
+highscoresBTN.addEventListener('click', () => {
   const scores = getHighscores();
   document.getElementById('scores').innerHTML = '';
   if (scores) {
@@ -57,6 +46,30 @@ document.querySelector('.highscores').addEventListener('click', () => {
   menu.style.display = 'none';
   highscores.style.display = 'block';
 });
+controlsBTN.addEventListener('click', () => {
+  menu.style.display = 'none';
+  controls.style.display = 'block';
+});
+//highscore manipulation and display functions/event-listeners
+let highscore;
+document.addEventListener('keypress', event => {
+  if (event.key === 'Enter' && nameBox.value) {
+    console.log(highscore);
+    addHighscore(nameBox.value, highscore);
+    nameBox.value = '';
+    nameAsker.style.display = 'none';
+    menu.style.display = 'block';
+  }
+});
+highscores.querySelector('.back').addEventListener('click', () => {
+  highscores.style.display = 'none';
+  menu.style.display = 'block';
+});
+controls.querySelector('.back').addEventListener('click', () => {
+  controls.style.display = 'none';
+  menu.style.display = 'block';
+});
+
 const fps = 10;
 const snakeSize = 20;
 const controls1 = {
@@ -271,13 +284,20 @@ function createGame(numOfPlayers) {
 
 function animate(numOfPlayers) {
   setTimeout(() => {
-    if (gameOn) animate();
+    if (gameOn) animate(numOfPlayers);
   }, 1000 / fps);
   c.clearRect(0, 0, canvas.width, canvas.height);
   mouse.draw();
   snake1.move();
-  snake2.move();
-  if (numOfPlayers === 2) snake2.move();
+  document.getElementById('player-1-score').innerHTML =
+    'Player One: ' + snake1.body.length;
+  if (numOfPlayers === 2) {
+    snake2.move();
+    document.getElementById('player-2-score').innerHTML =
+      'Player Two: ' + snake2.body.length;
+  } else {
+    document.getElementById('player-2-score').innerHTML = '';
+  }
 }
 
 function gameOver() {

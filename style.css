@@ -3,21 +3,41 @@ html {
 }
 canvas {
   border: 0.3vh solid black;
-  margin: 10vh auto;
+  margin: 0 auto;
   display: block;
 }
+.stripe {
+  height: 5vh;
+  width: 100vw;
+  border-top: 0.5vh solid black;
+  border-bottom: 0.5vh solid black;
+  margin-left: -0.5vw;
+  margin-top: 2vh;
+  margin-bottom: 1vh;
+  background-color: #dd0100;
+  padding-top: 1vh;
+}
+.score {
+  display: inline-block;
+  width: 49.5vw;
+  text-align: center;
+  font-weight: 800;
+}
 header {
-  border: 0.5vh solid black;
+  margin-left: -1vw;
+  border-top: 0.5vh solid black;
+  border-bottom: 0.5vh solid black;
   box-sizing: border-box;
   display: inline-block;
-  width: 99vw;
+  width: 100.5vw;
   height: 10vh;
+  background-color: #fac901;
 }
 header h1 {
   margin-left: 3vw;
 }
 #menu {
-  height: 40vh;
+  height: 45vh;
   width: 30vw;
   box-sizing: border-box;
   position: absolute;
@@ -26,7 +46,7 @@ header h1 {
   transform: translate(-50%, -50%);
   z-index: 1;
   border: 3vh solid black;
-  background-color: rgb(220, 220, 220);
+  background-color: #225095;
 }
 #menu h2 {
   text-align: center;
@@ -42,7 +62,7 @@ header h1 {
   transform: translate(-50%, -50%);
   z-index: 1;
   border: 1vh solid black;
-  background-color: rgb(220, 220, 220);
+  background-color: #225095;
 }
 #name_asker h3 {
   text-align: center;
@@ -68,16 +88,45 @@ header h1 {
   transform: translate(-50%, -50%);
   z-index: 1;
   border: 1vh solid black;
-  background-color: rgb(220, 220, 220);
+  background-color: #225095;
 }
 #highscores h2 {
   text-align: center;
 }
-#back {
+.back {
   position: absolute;
   top: 85%;
   width: 100%;
 }
+#controls {
+  height: 30vh;
+  width: 30vw;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  border: 1vh solid black;
+  background-color: #225095;
+}
+#controls li {
+  list-style: none;
+}
+#controls .back {
+  top: 70%;
+}
+#player-1 {
+  display: inline-block;
+  width: 10vw;
+  margin: 0 2vw;
+}
+#player-2 {
+  margin: 0 2vw;
+  display: inline-block;
+  width: 10vw;
+}
+
 .highscore p {
   display: inline-block;
   margin-top: 0;
